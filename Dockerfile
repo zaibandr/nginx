@@ -1,5 +1,5 @@
-FROM ubuntu:trusty
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+FROM ubuntu:latest
+MAINTAINER Zaibandr qwerty <zaibandr@ya.ru>
 
 RUN apt-get update && \
     apt-get install -y nginx && \
@@ -10,6 +10,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD sites-enabled/ /etc/nginx/sites-enabled/
 ADD app/ /app/
 
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["/usr/sbin/nginx"]
